@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 02, 2025 at 06:17 PM
+-- Generation Time: Jan 02, 2025 at 06:35 PM
 -- Server version: 10.4.32-MariaDB
--- PHP Version: 8.1.25
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `perpustakaanteknik`
+-- Database: `perpustakaanteknikk`
 --
 
 -- --------------------------------------------------------
@@ -40,26 +40,26 @@ CREATE TABLE `buku` (
 --
 
 INSERT INTO `buku` (`nomor_isbn`, `judul_buku`, `pengarang`, `penerbit`, `tahun_terbit`) VALUES
-(103, 'Bintang', 'Tere Liye', 'Gramedia Pustaka Utama', '2017-05-28'),
-(104, 'Selena', 'Tere Liye', 'Gramedia Pustaka Utama', '2020-03-03'),
-(105, 'Matahari', 'Tere Liye', 'Gramedia Pustaka Utama', '2016-07-14'),
-(106, 'Pergi', 'Tere Liye', 'Gramedia Pustaka Utama', '2018-11-01'),
-(107, 'Rindu', 'Tere Liye', 'Gramedia Pustaka Utama', '2014-02-06'),
-(108, 'Janji', 'Tere Liye', 'Gramedia Pustaka Utama', '2021-10-06'),
-(109, 'Sesuk', 'Tere Liye', 'Gramedia Pustaka Utama', '2022-04-29'),
-(110, 'Selamat Tinggal', 'Tere Liye', 'Gramedia Pustaka Utama', '2020-01-27'),
-(111, 'Nebula', 'Tere Liye', 'Gramedia Pustaka Utama', '2019-08-20'),
-(112, 'Tentang Kamu', 'Tere Liye', 'Gramedia Pustaka Utama', '2016-10-31'),
-(113, 'Komet', 'Tere Liye', 'Gramedia Pustaka Utama', '2018-04-21'),
-(114, 'Hello', 'Tere Liye', 'Gramedia Pustaka Utama', '2023-01-29'),
-(115, 'Si Putih', 'Tere Liye', 'Gramedia Pustaka Utama', '2021-10-24'),
-(116, 'Pulang', 'Tere Liye', 'Gramedia Pustaka Utama', '2015-10-12'),
-(117, 'Hujan', 'Tere Liye', 'Gramedia Pustaka Utama', '2016-12-08'),
-(118, 'Lumpu', 'Tere Liye', 'Gramedia Pustaka Utama', '2020-07-18'),
-(119, 'Burlian', 'Tere Liye', 'Gramedia Pustaka Utama', '2009-11-15'),
-(120, 'Yang Telah Lama Pergi', 'Tere Liye', 'Gramedia Pustaka Utama', '2023-09-30'),
 (10123456, 'Bumi', 'Tere Liye', 'Gramedia Pustaka Utama', '2014-04-11'),
-(11276644, 'Bulan', 'Tere Liye', 'Gramedia Pustaka Utama', '2015-02-22');
+(10294310, 'Bulan', 'Tere Liye', 'Gramedia Pustaka Utama', '2015-02-22'),
+(10345600, 'Bintang', 'Tere Liye', 'Gramedia Pustaka Utama', '2017-05-28'),
+(10416882, 'Selena', 'Tere Liye', 'Gramedia Pustaka Utama', '2020-03-03'),
+(10568943, 'Matahari', 'Tere Liye', 'Gramedia Pustaka Utama', '2016-07-14'),
+(10693506, 'Pergi', 'Tere Liye', 'Gramedia Pustaka Utama', '2018-11-01'),
+(10723001, 'Rindu', 'Tere Liye', 'Gramedia Pustaka Utama', '2014-02-06'),
+(10893062, 'Janji', 'Tere Liye', 'Gramedia Pustaka Utama', '2021-10-06'),
+(10920946, 'Sesuk', 'Tere Liye', 'Gramedia Pustaka Utama', '2022-04-29'),
+(11098092, 'Selamat Tinggal', 'Tere Liye', 'Gramedia Pustaka Utama', '2020-01-27'),
+(11143256, 'Nebula', 'Tere Liye', 'Gramedia Pustaka Utama', '2019-08-20'),
+(11276644, 'Tentang Kamu', 'Tere Liye', 'Gramedia Pustaka Utama', '2016-10-31'),
+(11376867, 'Komet', 'Tere Liye', 'Gramedia Pustaka Utama', '2018-04-21'),
+(11483412, 'Hello', 'Tere Liye', 'Gramedia Pustaka Utama', '2023-01-29'),
+(11538411, 'Si Putih', 'Tere Liye', 'Gramedia Pustaka Utama', '2021-10-24'),
+(11627225, 'Pulang', 'Tere Liye', 'Gramedia Pustaka Utama', '2015-10-12'),
+(11735044, 'Hujan', 'Tere Liye', 'Gramedia Pustaka Utama', '2016-12-08'),
+(11812404, 'Lumpu', 'Tere Liye', 'Gramedia Pustaka Utama', '2020-07-18'),
+(11955409, 'Burlian', 'Tere Liye', 'Gramedia Pustaka Utama', '2009-11-15'),
+(12031005, 'Yang Telah Lama Pergi', 'Tere Liye', 'Gramedia Pustaka Utama', '2023-09-30');
 
 -- --------------------------------------------------------
 
@@ -131,6 +131,32 @@ CREATE TABLE `staff` (
   `nama_staff` varchar(255) DEFAULT NULL,
   `jabatan` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `staff`
+--
+
+INSERT INTO `staff` (`id_staff`, `nama_staff`, `jabatan`) VALUES
+(2301, 'Eliza Hartanti', 'Kepala Pustakawan'),
+(2302, 'Indra Kurnia', 'Pustakawan'),
+(2303, 'Clara Wijaya', 'Asisten Pustakawan'),
+(2304, 'Erwin Saputra', 'Kepala Administrasi'),
+(2305, 'Bagus Pratama', 'Petugas Administrasi'),
+(2306, 'Clara Wijaya', 'Petugas Administrasi'),
+(2307, 'Fitri Permata', 'Petugas Administrasi'),
+(2308, 'Gina Rosalina', 'Pustakawan Digital'),
+(2309, 'Bambang Santoso', 'Pustakawan'),
+(23010, 'Eka Rahayu', 'Pustakawan Digital'),
+(23011, 'Dedi Firmansyah', 'Pengelola Koleksi Khusus'),
+(23012, 'Galang Wibowo', 'Petugas Keamanan'),
+(23013, 'Anita Pratama', 'Petugas Teknologi Informasi'),
+(23014, 'Dimas Nugroho', 'Petugas Teknologi Informasi'),
+(23015, 'Indra Kurnia', 'Petugas Keamanan'),
+(23016, 'Putri Nayara', 'Pengelola Koleksi Khusus'),
+(23017, 'Sandra Dewi', 'Asisten Petugas Teknologi Informasi'),
+(23018, 'Bayu Setya', 'Pustakawan Digital'),
+(23019, 'Nabil Putra', 'Pustakawan Digital'),
+(23020, 'Reyhan Dewa', 'Petugas Keamanan');
 
 --
 -- Indexes for dumped tables
