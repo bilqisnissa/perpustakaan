@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 02, 2025 at 04:27 PM
+-- Generation Time: Jan 02, 2025 at 06:17 PM
 -- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- PHP Version: 8.1.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -35,6 +35,32 @@ CREATE TABLE `buku` (
   `tahun_terbit` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `buku`
+--
+
+INSERT INTO `buku` (`nomor_isbn`, `judul_buku`, `pengarang`, `penerbit`, `tahun_terbit`) VALUES
+(103, 'Bintang', 'Tere Liye', 'Gramedia Pustaka Utama', '2017-05-28'),
+(104, 'Selena', 'Tere Liye', 'Gramedia Pustaka Utama', '2020-03-03'),
+(105, 'Matahari', 'Tere Liye', 'Gramedia Pustaka Utama', '2016-07-14'),
+(106, 'Pergi', 'Tere Liye', 'Gramedia Pustaka Utama', '2018-11-01'),
+(107, 'Rindu', 'Tere Liye', 'Gramedia Pustaka Utama', '2014-02-06'),
+(108, 'Janji', 'Tere Liye', 'Gramedia Pustaka Utama', '2021-10-06'),
+(109, 'Sesuk', 'Tere Liye', 'Gramedia Pustaka Utama', '2022-04-29'),
+(110, 'Selamat Tinggal', 'Tere Liye', 'Gramedia Pustaka Utama', '2020-01-27'),
+(111, 'Nebula', 'Tere Liye', 'Gramedia Pustaka Utama', '2019-08-20'),
+(112, 'Tentang Kamu', 'Tere Liye', 'Gramedia Pustaka Utama', '2016-10-31'),
+(113, 'Komet', 'Tere Liye', 'Gramedia Pustaka Utama', '2018-04-21'),
+(114, 'Hello', 'Tere Liye', 'Gramedia Pustaka Utama', '2023-01-29'),
+(115, 'Si Putih', 'Tere Liye', 'Gramedia Pustaka Utama', '2021-10-24'),
+(116, 'Pulang', 'Tere Liye', 'Gramedia Pustaka Utama', '2015-10-12'),
+(117, 'Hujan', 'Tere Liye', 'Gramedia Pustaka Utama', '2016-12-08'),
+(118, 'Lumpu', 'Tere Liye', 'Gramedia Pustaka Utama', '2020-07-18'),
+(119, 'Burlian', 'Tere Liye', 'Gramedia Pustaka Utama', '2009-11-15'),
+(120, 'Yang Telah Lama Pergi', 'Tere Liye', 'Gramedia Pustaka Utama', '2023-09-30'),
+(10123456, 'Bumi', 'Tere Liye', 'Gramedia Pustaka Utama', '2014-04-11'),
+(11276644, 'Bulan', 'Tere Liye', 'Gramedia Pustaka Utama', '2015-02-22');
+
 -- --------------------------------------------------------
 
 --
@@ -60,9 +86,9 @@ CREATE TABLE `peminjaman` (
 CREATE TABLE `pengunjung` (
   `id_pengunjung` int(11) NOT NULL,
   `nama_pengunjung` varchar(255) DEFAULT NULL,
-  `npm` int(20) DEFAULT NULL,
+  `npm` varchar(20) DEFAULT NULL,
   `alamat` varchar(255) DEFAULT NULL,
-  `no_kartu_anggota` int(6) DEFAULT NULL,
+  `no_kartu_anggota` varchar(20) DEFAULT NULL,
   `pas_foto` varchar(255) DEFAULT NULL,
   `bukti_pembayaran` varchar(255) DEFAULT NULL,
   `masa_berlaku` datetime DEFAULT NULL
@@ -73,26 +99,26 @@ CREATE TABLE `pengunjung` (
 --
 
 INSERT INTO `pengunjung` (`id_pengunjung`, `nama_pengunjung`, `npm`, `alamat`, `no_kartu_anggota`, `pas_foto`, `bukti_pembayaran`, `masa_berlaku`) VALUES
-(101, 'El Hopper', 2147483647, 'Hawkins, Indiana', 0, 'elhopper.png', 'lunas.png', '2029-01-17 00:00:00'),
-(102, 'Mike Wheeler', 2147483647, '2530 Piney Wood Lane, East Point', 0, 'mikewheeler.png', 'lunas.png', '2029-01-17 00:00:00'),
-(103, 'Number Five', 2147483647, 'Dublin, Ireland', 0, 'five.png', 'lunas.png', '2029-01-17 00:00:00'),
-(104, 'Dustin Henderson', 2147483647, '2886 Piney Wood Drive, East Point', 0, 'dustinhenderson.png', 'lunas.png', '2029-01-17 00:00:00'),
-(105, 'Maxine Mayfield', 2147483647, 'Texas, America', 0, 'maxinemayfield.png', 'lunas.png', '2029-01-17 00:00:00'),
-(106, 'Steve Harrington', 2147483647, '8253 Carlton Road, Riverdale', 0, 'steveharrington.png', 'lunas.png', '2029-01-17 00:00:00'),
-(107, 'Allison Hargreeves', 2147483647, 'Capetown, South Africa', 0, 'allison.png', 'lunas.png', '2029-01-17 00:00:00'),
-(108, 'Jonathan Byers', 2147483647, '13212 Montgomery Boulevard NE, Glenwood Hills, Albuquerque', 0, 'jonhbyers.png', 'lunas.png', '2029-01-17 00:00:00'),
-(109, 'Ben Hargreeves', 2147483647, 'Toronto, Canada', 0, 'ben.png', 'lunas.png', '2029-01-17 00:00:00'),
-(110, 'Eddie Munson', 2147483647, 'Salt Lake City, Utah', 0, 'eddie.png', 'lunas.png', '2029-01-17 00:00:00'),
-(111, 'Will Byers', 2147483647, '13212 Montgomery Boulevard NE, Glenwood Hills, Albuquerque', 0, 'willbyers.png', 'lunas.png', '2029-01-17 00:00:00'),
-(112, 'Nancy Wheeler', 2147483647, '2530 Piney Wood Lane, East Point', 0, 'nancywheeler.png', 'lunas.png', '2029-01-17 00:00:00'),
-(113, 'Suzie', 2147483647, 'Salt Lake City, Utah', 0, 'suzie.png', 'lunas.png', '2029-01-17 00:00:00'),
-(114, 'Hermione Granger', 2147483647, '8 Heathgate, Hampstead Garden Suburb, London', 0, 'hermioner.png', 'lunas.png', '2029-01-17 00:00:00'),
-(115, 'Diego Hargreeves', 2147483647, 'Aguascalientes, Meksiko', 0, 'diego.png', 'lunas.png', '2029-01-17 00:00:00'),
-(116, 'Newt Scamander', 2147483647, '9 Sherringford Square, London', 0, 'newtscamander.png', 'lunas.png', '2029-01-17 00:00:00'),
-(117, 'Luna Lovegood', 2147483647, 'Ottery St Catchpole, Devon', 0, 'lovegood.png', 'lunas.png', '2029-01-17 00:00:00'),
-(118, 'Ginny Weasley', 2147483647, 'The Burrow, Ottery St Catchpole, Devon', 0, 'ginnyweasley.png', 'lunas.png', '2029-01-17 00:00:00'),
-(119, 'Jayme Hargreeves', 2147483647, 'Moskow, Rusia', 0, 'jaymehargreeves.png', 'lunas.png', '2029-01-17 00:00:00'),
-(120, 'Cedric Diggory', 2147483647, 'Stockholm, Swedia', 0, 'cedricdiggory.png', 'lunas.png', '2029-01-17 00:00:00');
+(101, 'El Hopper', '4523210001', 'Hawkins, Indiana', 'IF0823', 'elhopper.png', 'lunas.png', '2029-01-17 00:00:00'),
+(102, 'Mike Wheeler', '4523210002', '2530 Piney Wood Lane, East Point', 'IF7823', 'mikewheeler.png', 'lunas.png', '2029-01-17 00:00:00'),
+(103, 'Number Five', '4523210003', 'Dublin, Ireland', 'IF7892', 'five.png', 'lunas.png', '2029-01-17 00:00:00'),
+(104, 'Dustin Henderson', '4523210004', '2886 Piney Wood Drive, East Point', 'IF2930', 'dustinhenderson.png', 'lunas.png', '2029-01-17 00:00:00'),
+(105, 'Maxine Mayfield', '4523210005', 'Texas, America', 'IF9203', 'maxinemayfield.png', 'lunas.png', '2029-01-17 00:00:00'),
+(106, 'Steve Harrington', '4523210006', '8253 Carlton Road, Riverdale', 'IF2022', 'steveharrington.png', 'lunas.png', '2029-01-17 00:00:00'),
+(107, 'Allison Hargreeves', '4523210007', 'Capetown, South Africa', 'IF4032', 'allison.png', 'lunas.png', '2029-01-17 00:00:00'),
+(108, 'Jonathan Byers', '4523210008', '13212 Montgomery Boulevard NE, Glenwood Hills, Albuquerque', 'IF0203', 'jonhbyers.png', 'lunas.png', '2029-01-17 00:00:00'),
+(109, 'Ben Hargreeves', '4523210009', 'Toronto, Canada', 'IF3033', 'ben.png', 'lunas.png', '2029-01-17 00:00:00'),
+(110, 'Eddie Munson', '4523210010', 'Salt Lake City, Utah', 'IF0123', 'eddie.png', 'lunas.png', '2029-01-17 00:00:00'),
+(111, 'Will Byers', '4523210011', '13212 Montgomery Boulevard NE, Glenwood Hills, Albuquerque', 'IF0392', 'willbyers.png', 'lunas.png', '2029-01-17 00:00:00'),
+(112, 'Nancy Wheeler', '4523210012', '2530 Piney Wood Lane, East Point', 'IF2839', 'nancywheeler.png', 'lunas.png', '2029-01-17 00:00:00'),
+(113, 'Suzie', '4523210013', 'Salt Lake City, Utah', 'IF3020', 'suzie.png', 'lunas.png', '2029-01-17 00:00:00'),
+(114, 'Hermione Granger', '4523210014', '8 Heathgate, Hampstead Garden Suburb, London', 'IF0001', 'hermioner.png', 'lunas.png', '2029-01-17 00:00:00'),
+(115, 'Diego Hargreeves', '4523210015', 'Aguascalientes, Meksiko', 'IF3043', 'diego.png', 'lunas.png', '2029-01-17 00:00:00'),
+(116, 'Newt Scamander', '4523210016', '9 Sherringford Square, London', 'IF2738', 'newtscamander.png', 'lunas.png', '2029-01-17 00:00:00'),
+(117, 'Luna Lovegood', '4523210017', 'Ottery St Catchpole, Devon', 'IF0211', 'lovegood.png', 'lunas.png', '2029-01-17 00:00:00'),
+(118, 'Ginny Weasley', '4523210018', 'The Burrow, Ottery St Catchpole, Devon', 'IF9912', 'ginnyweasley.png', 'lunas.png', '2029-01-17 00:00:00'),
+(119, 'Jayme Hargreeves', '4523210019', 'Moskow, Rusia', 'IF0249', 'jaymehargreeves.png', 'lunas.png', '2029-01-17 00:00:00'),
+(120, 'Cedric Diggory', '4523210020', 'Stockholm, Swedia', 'IF2002', 'cedricdiggory.png', 'lunas.png', '2029-01-17 00:00:00');
 
 -- --------------------------------------------------------
 
